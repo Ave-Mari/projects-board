@@ -4,3 +4,7 @@ export const addProject = (projectData) => {
         payload: projectData
     }
 }
+
+export const addTask = () => {
+    return null
+}
