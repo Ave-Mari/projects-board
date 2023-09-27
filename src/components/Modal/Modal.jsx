@@ -1,10 +1,12 @@
 import React from 'react';
-import style from './Modal.mosule.scss'
+import style from './Modal.scss'
 
-export default function Modal() {
+export default function Modal({children}) {
   return (
-    <div className={style.frame}>
-
+    <div className="frame">
+      <div className="modal-window">
+       {children}
+      </div>
     </div>
   )
 }
