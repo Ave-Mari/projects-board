@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom"
 import { addProject } from "../actions/actions";
 import Modal from "../components/Modal/Modal";
 
@@ -10,8 +11,6 @@ export default function ProjectsListPage() {
   const [projectTitle, setProjectTitle] = useState("");
 
   const projectsList = useSelector((state) => state.projectsList);
-
-  console.log(projectsList)
 
   const handleInputChange = (e) => {
     setProjectTitle(e.target.value);
@@ -55,7 +54,9 @@ export default function ProjectsListPage() {
         const { title, projectId } = item;
         return (
           <ul>
-            <li key={projectId}>{title}</li>
+            <li key={projectId}>
+                <Link to="/:projectId">{title}</Link>          
+            </li>
           </ul>
         );
       })}
