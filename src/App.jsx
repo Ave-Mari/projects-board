@@ -12,7 +12,7 @@ export default function App() {
     <main>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/:projectId" element={<ProjectsListPage />} />
+          <Route path="/projects" element={<ProjectsListPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
