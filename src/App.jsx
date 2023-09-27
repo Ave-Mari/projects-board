@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import ErrorPage from "./pages/ErrorPage";
 import ProjectsListPage from "./pages/ProjectsListPage";
+import ProjectItemPage from "./pages/ProjectItemPage";
 //styles
 import "./App.scss";
 
@@ -12,7 +13,8 @@ export default function App() {
     <main>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/projects" element={<ProjectsListPage />} />
+          <Route path="projects" element={<ProjectsListPage />} />
+          <Route path="/:projectId" element={<ProjectItemPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
