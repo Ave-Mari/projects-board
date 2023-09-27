@@ -5,7 +5,7 @@ import Layout from "./pages/Layout";
 import ErrorPage from "./pages/ErrorPage";
 import ProjectsListPage from "./pages/ProjectsListPage";
 //styles
-import "./index.module.scss";
+import "./App.scss";
 
 export default function App() {
   return (
