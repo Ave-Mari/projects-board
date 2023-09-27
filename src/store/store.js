@@ -1,8 +1,8 @@
- import { combineReducers, createStore } from 'redux';
- import { projectsList } from '../reducers/projectsListReducer'
+import { combineReducers, createStore } from "redux";
+import { projectsList } from "../reducers/projectsListReducer";
 
- const rootReducers = combineReducers({
-    projectsList
- });
+const rootReducers = combineReducers({
+  projectsList,
+});
 
- export const store = createStore(rootReducers)
+export const store = createStore(rootReducers);
