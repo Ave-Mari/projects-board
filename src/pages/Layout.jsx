@@ -5,7 +5,7 @@ export default function Layout() {
   return (
     <>
       <header>
-        <Link to="/">Projects List</Link>
+        <Link to="/projects">Projects List</Link>
         <Outlet />
       </header>
     </>
