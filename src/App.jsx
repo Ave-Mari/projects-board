@@ -12,12 +12,13 @@ import "./App.scss";
 
 export default function App() {
   const projectsList = useSelector((state) => state.projectsList);
+ 
   return (
     <main>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="projects" element={<ProjectsListPage />} />
-          <Route path="projects/:projectId" element={<ProjectItemPage projectsList={projectsList} />} />
+          <Route path="projects/:projectId" element={<ProjectItemPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
