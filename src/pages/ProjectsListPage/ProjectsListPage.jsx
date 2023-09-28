@@ -5,7 +5,7 @@ import { addProject } from "../../actions/actions";
 import { projectsList } from "../../reducers/projectsListReducer";
 //components
 import Modal from "../../components/Modal/Modal";
-import ProjectItemPage from "../ProjectItemPage";
+import ProjectItemPage from "../ProjectItemPage/ProjectItemPage";
 //style
 import './ProjectsListPage.scss'
 
@@ -16,14 +16,18 @@ export default function ProjectsListPage() {
   const [title, setTitle] = useState("");
 
   const projectsList = useSelector((state) => state.projectsList);
- 
 
   const handleInputChange = (e) => {
     setTitle(e.target.value);
   };
 
   const handleSubmitForm = () => {
-    dispatch(addProject(title));
+    const newProject = {
+      projectId: new Date().valueOf(),
+      title: title,
+      tasks: []
+    };
+    dispatch(addProject(newProject));
     setTitle("");
     setModalVisible(false);
   };
@@ -60,8 +64,8 @@ export default function ProjectsListPage() {
         const { title, projectId } = item;
         return (
           <ul>
-            <li key={projectId}>
-              <Link to={`/projects/${projectId}`} > 
+            <li >
+              <Link to={`/projects/${projectId}`} key={projectId}> 
                 {title}  
               </Link>
             </li>
