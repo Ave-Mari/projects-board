@@ -6,3 +6,45 @@
     left: 0;
     background: rgba(0, 0, 0, 0.5);
 }
+
+.modal-window {
+    position: absolute;
+    border-radius: 12px;
+  top: 20%;
+  left: 39%;
+  right: 38%;
+  background: #fff;
+}
+
+form {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px 0;
+
+  input {
+    margin-bottom: 18px;
+    padding: 5px 14px;
+    font-size: 14px;
+  }
+
+
+}
+
+input::placeholder {
+    font-size: 17px;
+}
+
+.btn-create-project {
+    padding: 6px 19px;
+    font-size: 18px;
+    background: #5d43da;
+    border-radius: 18px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background: #fbc143;
+    }
+}
