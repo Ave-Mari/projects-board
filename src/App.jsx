@@ -3,9 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import { projectsList } from './reducers/projectsListReducer'
 //components
-import Layout from "./pages/Layout";
+import Layout from "./pages/Layout/Layout";
 import ErrorPage from "./pages/ErrorPage";
-import ProjectsListPage from "./pages/ProjectsListPage";
+import ProjectsListPage from "./pages/ProjectsListPage/ProjectsListPage";
 import ProjectItemPage from "./pages/ProjectItemPage";
 //styles
 import "./App.scss";
