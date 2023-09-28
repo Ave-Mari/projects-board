@@ -1,0 +1,11 @@
+.boards-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.board {
+    width: 400px;
+    height: 500px;
+    border: 5px solid rgb(27, 44, 198);
+    border-radius: 20px;
+}
