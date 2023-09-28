@@ -14,7 +14,7 @@ export default function ProjectsListPage() {
   const [projectTitle, setProjectTitle] = useState("");
 
   const projectsList = useSelector((state) => state.projectsList);
-  //console.log(projectsList);
+ 
 
   const handleInputChange = (e) => {
     setProjectTitle(e.target.value);
@@ -59,10 +59,8 @@ export default function ProjectsListPage() {
         return (
           <ul>
             <li key={projectId}>
-              <Link to={`/projects/${projectId}`} >                             
-                <ProjectItemPage projectId={projectId}>
+              <Link to={`/projects/${projectId}`} > 
                 {title}  
-                </ProjectItemPage>
               </Link>
             </li>
           </ul>
