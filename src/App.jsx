@@ -6,7 +6,7 @@ import { projectsList } from './reducers/projectsListReducer'
 import Layout from "./pages/Layout/Layout";
 import ErrorPage from "./pages/ErrorPage";
 import ProjectsListPage from "./pages/ProjectsListPage/ProjectsListPage";
-import ProjectItemPage from "./pages/ProjectItemPage";
+import ProjectItemPage from "./pages/ProjectItemPage/ProjectItemPage";
 //styles
 import "./App.scss";
 
