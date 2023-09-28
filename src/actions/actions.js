@@ -1,7 +1,7 @@
-export const addProject = (projectData) => {
+export const addProject = (newProject) => {
     return {
         type: 'ADD_PROJECT',
-        payload: projectData
+        payload: newProject
     }
 }
 
