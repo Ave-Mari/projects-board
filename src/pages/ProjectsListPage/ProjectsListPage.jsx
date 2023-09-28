@@ -37,13 +37,19 @@ export default function ProjectsListPage() {
     setModalVisible(true);
   };
 
+  const closeModal = (e) => {
+    if (e.target === e.currentTarget) {
+      setModalVisible(false);
+    }
+  }
+
   return (
     <section>
       <button className="btn-create-project" onClick={openModal}>Create new project</button>
 
       {modalVisible && (
         <Modal
-          //closeModal={setModalVisible(false)}
+          closeModal={closeModal}
           //modalVisible={modalVisible}
           //setModalVisible={setModalVisible}
           children={
