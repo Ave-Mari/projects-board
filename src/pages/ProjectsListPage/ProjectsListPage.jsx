@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { addProject } from "../actions/actions";
-import { projectsList } from "../reducers/projectsListReducer";
+import { addProject } from "../../actions/actions";
+import { projectsList } from "../../reducers/projectsListReducer";
 //components
-import Modal from "../components/Modal/Modal";
-import ProjectItemPage from "./ProjectItemPage";
+import Modal from "../../components/Modal/Modal";
+import ProjectItemPage from "../ProjectItemPage";
 
 export default function ProjectsListPage() {
   const dispatch = useDispatch();
