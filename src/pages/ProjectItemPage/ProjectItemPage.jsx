@@ -1,6 +1,6 @@
 import React from "react";
 import Board from "../../components/Board/Board";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { projectsList } from "../../reducers/projectsListReducer";
 import { useSelector } from "react-redux";
 //styles
@@ -12,8 +12,9 @@ export default function ProjectItemPage() {
   const project = projectsState.find((p) => p.projectId === Number(projectId));
   const tasks = project.tasks;
 
+
   if (!project) {
-    return <div>Project doesn't exist</div>;
+    return <div><h2>Project doesn't exist</h2></div>;
   }
 
   console.log('length:', tasks.length);
@@ -35,9 +36,17 @@ export default function ProjectItemPage() {
           )
         } else {
           return (
+            <>
             <Board
-              status={status}
+              status="Queue"
             />
+            <Board
+              status="Development"
+            />
+            <Board
+              status="Done"
+            />
+            </>
           )
         }
         
