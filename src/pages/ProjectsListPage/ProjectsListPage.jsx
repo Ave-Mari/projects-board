@@ -6,23 +6,25 @@ import { projectsList } from "../../reducers/projectsListReducer";
 //components
 import Modal from "../../components/Modal/Modal";
 import ProjectItemPage from "../ProjectItemPage";
+//style
+import './ProjectsListPage.scss'
 
 export default function ProjectsListPage() {
   const dispatch = useDispatch();
 
   const [modalVisible, setModalVisible] = useState(false);
-  const [projectTitle, setProjectTitle] = useState("");
+  const [title, setTitle] = useState("");
 
   const projectsList = useSelector((state) => state.projectsList);
  
 
   const handleInputChange = (e) => {
-    setProjectTitle(e.target.value);
+    setTitle(e.target.value);
   };
 
   const handleSubmitForm = () => {
-    dispatch(addProject(projectTitle));
-    setProjectTitle("");
+    dispatch(addProject(title));
+    setTitle("");
     setModalVisible(false);
   };
 
@@ -33,7 +35,7 @@ export default function ProjectsListPage() {
 
   return (
     <section>
-      <button onClick={openModal}>Create new project</button>
+      <button className="btn-create-project" onClick={openModal}>Create new project</button>
 
       {modalVisible && (
         <Modal
@@ -44,11 +46,11 @@ export default function ProjectsListPage() {
             <form onSubmit={handleSubmitForm}>
               <input
                 type="text"
-                value={projectTitle}
+                value={title}
                 placeholder="Project name"
                 onChange={handleInputChange}
               />
-              <button type="submit">Create project</button>
+              <button className="btn-create-project" type="submit">Create project</button>
             </form>
           }
         />
