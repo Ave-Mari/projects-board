@@ -10,12 +10,12 @@ export default function Board({ taskId, headline, description, status }) {
     <div className="board">
       <h2>{status}</h2>
       <div className="board-wrapper">
-      <TaskItem
-              key={taskId}
-              headline={headline}
-              description={description}
-              status={status}
-            />
+        <TaskItem
+          key={taskId}
+          headline={headline}
+          description={description}
+          status={status}
+        />
       </div>
     </div>
   );
