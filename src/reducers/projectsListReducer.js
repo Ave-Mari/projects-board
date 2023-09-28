@@ -57,7 +57,7 @@ const initialState = [
 
 export const projectsList = (state = initialState, action) => {
     switch(action.type) {
-        case addProject:
+        case 'ADD_PROJECT':
             return [...state, action.payload];
             
         case addTask: return null
