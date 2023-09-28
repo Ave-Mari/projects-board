@@ -26,6 +26,32 @@ const initialState = [
 
 
         ]
+    },
+    {
+        projectId: 436875,
+        title: 'Another Example Project',
+        tasks: [
+            {
+                taskId: 478549,
+                headline: 'Test task 1',
+                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam ipsum dolores perspiciatis!',
+                status: 'Development',                
+            },
+            {
+                taskId: 892379,
+                headline: 'Test task 2',
+                description: 'Lorem ipsum dolor sit amet consectetur adipisicing.',
+                status: 'Queue',                
+            },
+            {
+                taskId: 365077,
+                headline: 'Test task 3',
+                description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, accusamus',
+                status: 'Done',                
+            }
+
+
+        ]
     }
 ]
 
