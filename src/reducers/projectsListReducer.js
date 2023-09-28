@@ -55,20 +55,11 @@ const initialState = [
     }
 ]
 
-// {
-//     projectsList: [
-//         {
-//             projectId: 142354,
-//             title: 'Example Project',
-//             tasks: []
-//         }
-//     ]
-// }
-
 export const projectsList = (state = initialState, action) => {
     switch(action.type) {
         case addProject:
             return [...state, action.payload];
+            
         case addTask: return null
         default:
             return state;
