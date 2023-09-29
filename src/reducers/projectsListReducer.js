@@ -63,7 +63,7 @@ export const projectsList = (state = initialState, action) => {
         case 'ADD_TASK':
             const { projectId, newTask } = action.payload
             return state.map((project) => {
-                if (project.projectId === projectId) {
+                if (project.projectId === Number(projectId)) {
                     const projectUpdate = {...project, tasks: [...project.tasks, newTask]};
                     return projectUpdate;
                 }
