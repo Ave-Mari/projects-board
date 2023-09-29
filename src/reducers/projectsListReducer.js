@@ -60,7 +60,15 @@ export const projectsList = (state = initialState, action) => {
         case 'ADD_PROJECT':
             return [...state, action.payload];
             
-        case addTask: return null
+        case 'ADD_TASK':
+            const { projectId, newTask } = action.payload
+            return state.map((project) => {
+                if (project.projectId === projectId) {
+                    const projectUpdate = {...project, tasks: [...project.tasks, newTask]};
+                    return projectUpdate;
+                }
+                return project
+            })
         default:
             return state;
     }
