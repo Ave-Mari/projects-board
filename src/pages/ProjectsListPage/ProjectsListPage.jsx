@@ -45,7 +45,7 @@ export default function ProjectsListPage() {
 
   return (
     <section>
-      <button className="btn-create-project" onClick={openModal}>Create new project</button>
+      <button className="btn-create" onClick={openModal}>Create new project</button>
 
       {modalVisible && (
         <Modal
