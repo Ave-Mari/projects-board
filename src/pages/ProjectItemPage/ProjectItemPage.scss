@@ -9,3 +9,17 @@
     border: 5px solid rgb(27, 44, 198);
     border-radius: 20px;
 }
+
+.btn-create {
+    padding: 6px 19px;
+    font-size: 18px;
+    background: #5d43da;
+    border-radius: 18px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background: #fbc143;
+    }
+} 
