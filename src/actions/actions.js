@@ -5,6 +5,9 @@ export const addProject = (newProject) => {
     }
 }
 
-export const addTask = () => {
-    return null
+export const addTask = (projectId, newTask) => {
+    return {
+        type: 'ADD_TASK',
+        payload: { projectId, newTask }
+    }
 }
