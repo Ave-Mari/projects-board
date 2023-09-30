@@ -11,13 +11,14 @@ export default function Board({ tasks, status }) {
       <div className="board-wrapper">
         <ul>
           {tasks.map((item) => {
-            const { taskId, headline, description, status } = item;
+            const { taskId, headline, description, status, date } = item;
             return (
               <TaskItem
                 key={taskId}
                 headline={headline}
                 description={description}
                 status={status}
+                date={date}
               />
             );
           })}
