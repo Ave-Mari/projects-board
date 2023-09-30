@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import { projectsList } from "../../reducers/projectsListReducer";
 //components
 import TaskItem from "../TaskItem/TaskItem";
+//styles
+import './Board.scss'
 
 export default function Board({ tasks, status }) {
   return (
