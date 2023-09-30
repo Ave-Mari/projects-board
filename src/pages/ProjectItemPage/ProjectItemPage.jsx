@@ -5,6 +5,7 @@ import { addTask } from '../../actions/actions'
 import { useParams, useNavigate } from "react-router-dom";
 import { projectsList } from "../../reducers/projectsListReducer";
 import { useSelector, useDispatch } from "react-redux";
+import { dateFormat } from './DateFormat'
 //styles
 import "./ProjectItemPage.scss";
 
@@ -14,6 +15,8 @@ export default function ProjectItemPage() {
     headline: "",
     description: "",
   });
+
+  dateFormat(new Date())
 
   const dispatch = useDispatch();
 
@@ -44,7 +47,8 @@ export default function ProjectItemPage() {
       projectId: new Date().valueOf(),
       headline: task.headline,
       description: task.description,
-      status: 'Queue'
+      status: 'Queue',
+      date: dateFormat(new Date())
     }
     dispatch(addTask(projectId, newTask));
     setTask({
