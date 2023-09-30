@@ -1,0 +1,53 @@
+li {
+    border-radius: 12px;
+    background: #fff;
+    padding: 5px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    h3, p {
+        margin: 0 0 9px 0;
+    }
+
+    .status {
+        padding: 5px;
+        border-radius: 10px;
+        color: #fff;
+    }
+
+    .date {
+        font-size: 14px;
+        color: #4d3863;
+    }
+}
+.queue {
+    border: 6px dotted #6a23ad;
+    h3 {
+        color: #470287;
+    }
+    .status {
+        background: #902ded;
+    }
+    
+}
+.development {
+    border: 6px dotted #da3b0b;
+    h3 {
+        color: #7a0c01;
+    }
+    .status {
+        background: #e47022;
+    }
+    
+}
+.done {
+    border: 6px dotted #05a947;
+    h3 {
+        color: #016919;
+    }
+    .status {
+        background: #179e1b;
+    }
+    
+}
