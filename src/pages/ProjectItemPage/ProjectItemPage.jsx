@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Board from "../../components/Board/Board";
 import Modal from "../../components/Modal/Modal";
-import { addTask } from '../../actions/actions'
+import { addTask } from "../../actions/actions";
 import { useParams, useNavigate } from "react-router-dom";
 import { projectsList } from "../../reducers/projectsListReducer";
 import { useSelector, useDispatch } from "react-redux";
-import { dateFormat } from './DateFormat'
+import { dateFormat } from "./DateFormat";
 //styles
 import "./ProjectItemPage.scss";
 
@@ -37,17 +37,17 @@ export default function ProjectItemPage() {
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    setTask({...task, [name]: value})
-  }
+    setTask({ ...task, [name]: value });
+  };
 
   const handleSubmit = () => {
     const newTask = {
       projectId: new Date().valueOf(),
       headline: task.headline,
       description: task.description,
-      status: 'Queue',
-      date: dateFormat(new Date())
-    }
+      status: "Queue",
+      date: dateFormat(new Date()),
+    };
     dispatch(addTask(projectId, newTask));
     setTask({
       headline: "",
@@ -85,13 +85,17 @@ export default function ProjectItemPage() {
                 name="description"
                 value={task.description}
               />
-              <button className="btn-create" type="submit">Create Task</button>
+              <button className="btn-create" type="submit">
+                Create Task
+              </button>
             </form>
           }
         />
       )}
       <h1 className="project-title">{project.title}</h1>
-      <button onClick={createTaskModal} className="btn-create">Create Task</button>
+      <button onClick={createTaskModal} className="btn-create">
+        Create Task
+      </button>
       {tasks.length === 0 ? (
         <div className="boards-wrapper">
           <Board status="Queue" tasks={[]} />
