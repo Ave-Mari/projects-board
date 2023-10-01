@@ -7,7 +7,7 @@ import { projectsList } from "../../reducers/projectsListReducer";
 import Modal from "../../components/Modal/Modal";
 import ProjectItemPage from "../ProjectItemPage/ProjectItemPage";
 //style
-import './ProjectsListPage.scss'
+import "./ProjectsListPage.scss";
 
 export default function ProjectsListPage() {
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ export default function ProjectsListPage() {
     const newProject = {
       projectId: new Date().valueOf(),
       title: title,
-      tasks: []
+      tasks: [],
     };
     dispatch(addProject(newProject));
     setTitle("");
@@ -41,17 +41,17 @@ export default function ProjectsListPage() {
     if (e.target === e.currentTarget) {
       setModalVisible(false);
     }
-  }
+  };
 
   return (
     <section className="projects-list">
-      <button className="btn-create" onClick={openModal}>Create new project</button>
+      <button className="btn-create" onClick={openModal}>
+        Create new project
+      </button>
 
       {modalVisible && (
         <Modal
           closeModal={closeModal}
-          //modalVisible={modalVisible}
-          //setModalVisible={setModalVisible}
           children={
             <form onSubmit={handleSubmitForm}>
               <input
@@ -60,7 +60,9 @@ export default function ProjectsListPage() {
                 placeholder="Project name"
                 onChange={handleInputChange}
               />
-              <button className="btn-create-project" type="submit">Create project</button>
+              <button className="btn-create-project" type="submit">
+                Create project
+              </button>
             </form>
           }
         />
@@ -70,9 +72,9 @@ export default function ProjectsListPage() {
         const { title, projectId } = item;
         return (
           <ul>
-            <li >
-              <Link to={`/projects/${projectId}`} key={projectId}> 
-                {title}  
+            <li>
+              <Link to={`/projects/${projectId}`} key={projectId}>
+                {title}
               </Link>
             </li>
           </ul>
