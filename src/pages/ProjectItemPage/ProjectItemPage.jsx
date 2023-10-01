@@ -16,8 +16,6 @@ export default function ProjectItemPage() {
     description: "",
   });
 
-  dateFormat(new Date())
-
   const dispatch = useDispatch();
 
   const { projectId } = useParams();
@@ -67,7 +65,7 @@ export default function ProjectItemPage() {
   }
 
   return (
-    <section>
+    <section className="project-item-page">
       {modalVisible && (
         <Modal
           closeModal={closeModal}
@@ -92,7 +90,7 @@ export default function ProjectItemPage() {
           }
         />
       )}
-      <h1>{project.title}</h1>
+      <h1 className="project-title">{project.title}</h1>
       <button onClick={createTaskModal} className="btn-create">Create Task</button>
       {tasks.length === 0 ? (
         <div className="boards-wrapper">
