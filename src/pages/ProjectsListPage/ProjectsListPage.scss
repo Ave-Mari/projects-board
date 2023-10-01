@@ -1,3 +1,24 @@
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+ul {
+    li {        
+        a {
+            text-decoration: none;
+            font-size: 14px;
+            background: #e31f1f;
+            padding: 2px 12px;
+            color: #fff;
+            border-radius: 18px;
+            cursor: pointer;
+        }
+        
+    }
+}
 .btn-create {
     padding: 6px 19px;
     font-size: 18px;
