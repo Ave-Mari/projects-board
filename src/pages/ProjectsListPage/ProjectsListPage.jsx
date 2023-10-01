@@ -44,7 +44,7 @@ export default function ProjectsListPage() {
   }
 
   return (
-    <section>
+    <section className="projects-list">
       <button className="btn-create" onClick={openModal}>Create new project</button>
 
       {modalVisible && (
