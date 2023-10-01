@@ -1,13 +1,21 @@
+.project-item-page {
+    button {
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 8px;
+    }
+    
+}
+.project-title {
+    font-size: 28px;
+    text-align: center;
+    margin-top: 4px;
+    margin-bottom: 12px;
+}
+
 .boards-wrapper {
     display: flex;
     justify-content: space-around;
-}
-
-.board {
-    width: 400px;
-    height: 500px;
-    border: 5px solid rgb(27, 44, 198);
-    border-radius: 20px;
 }
 
 .btn-create {
