@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useDrop } from "react-dnd";
-import { projectsList } from "../../reducers/projectsListReducer";
 import { updateTaskStatus } from "../../actions/actions";
 //components
 import TaskItem from "../TaskItem/TaskItem";
