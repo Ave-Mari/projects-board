@@ -1,3 +1,34 @@
+.board-done,
+.board-development,
+.board-queue {
+    width: 450px;
+    height: 480px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12px;
+
+    cursor: grab;
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+}
+.board-done {
+    border: 5px solid rgb(11, 121, 29);
+    background: #9dfab5;
+}
+.board-development {
+    border: 5px solid rgb(210, 45, 16);
+    background: #fbcbac;
+}
+.board-queue {
+    border: 5px solid rgb(87, 8, 183);
+    background: #d4c0f5;
+}
+
 ul {
     list-style: none;
     padding-left: 0;
