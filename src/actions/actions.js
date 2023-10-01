@@ -11,3 +11,8 @@ export const addTask = (projectId, newTask) => {
         payload: { projectId, newTask }
     }
 }
+
+export const updateTaskStatus = (taskId, newStatus) => ({
+    type: 'UPDATE_TASK_STATUS',
+    payload: { taskId, newStatus }
+})
