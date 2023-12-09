@@ -1,15 +1,16 @@
 .frame {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .modal-window {
-    position: absolute;
-    border-radius: 12px;
+  position: absolute;
+  border-radius: 12px;
+  z-index: 1000;
   top: 20%;
   left: 39%;
   right: 38%;
@@ -17,7 +18,7 @@
 }
 
 form {
-    display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   padding: 18px 0;
@@ -27,24 +28,23 @@ form {
     padding: 5px 14px;
     font-size: 14px;
   }
-
-
 }
 
 input::placeholder {
-    font-size: 17px;
+  font-size: 17px;
 }
 
-.btn-create {
-    padding: 6px 19px;
-    font-size: 18px;
-    background: #5d43da;
-    border-radius: 18px;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+.btn-create,
+.btn-create-project {
+  padding: 6px 19px;
+  font-size: 18px;
+  background: #5d43da;
+  border-radius: 18px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 
-    &:hover {
-        background: #fbc143;
-    }
+  &:hover {
+    background: #fbc143;
+  }
 }
