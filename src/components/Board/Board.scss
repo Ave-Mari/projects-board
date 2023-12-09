@@ -17,16 +17,19 @@
     }
 }
 .board-done {
-    border: 5px solid rgb(11, 121, 29);
+    border: 3px solid rgb(11, 121, 29);
     background: #9dfab5;
+    border-radius: 3%;
 }
 .board-development {
-    border: 5px solid rgb(210, 45, 16);
+    border: 3px solid rgb(210, 45, 16);
     background: #fbcbac;
+    border-radius: 3%;
 }
 .board-queue {
-    border: 5px solid rgb(87, 8, 183);
+    border: 3px solid rgb(87, 8, 183);
     background: #d4c0f5;
+    border-radius: 3%;
 }
 
 ul {
