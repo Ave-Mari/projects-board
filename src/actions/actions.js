@@ -11,6 +11,12 @@ export const addTask = (projectId, newTask) => {
         payload: { projectId, newTask }
     }
 }
+export const deleteTask = (taskId, projectId) => {
+    return {
+        type: 'DELETE_TASK',
+        payload: { taskId, projectId }
+    }
+}
 
 export const updateTaskStatus = (taskId, newStatus) => ({
     type: 'UPDATE_TASK_STATUS',
