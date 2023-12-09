@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Board from "../../components/Board/Board";
 import Modal from "../../components/Modal/Modal";
-import { addTask } from "../../actions/actions";
+import { addTask,updateTaskStatus } from "../../actions/actions";
 import { useParams, useNavigate } from "react-router-dom";
 import { projectsList } from "../../reducers/projectsListReducer";
 import { useSelector, useDispatch } from "react-redux";
@@ -22,6 +22,8 @@ export default function ProjectItemPage() {
   const projectsState = useSelector((state) => state.projectsList);
   const project = projectsState.find((p) => p.projectId === Number(projectId));
   const tasks = project.tasks;
+
+  console.log(project);
 
   const createTaskModal = (e) => {
     e.preventDefault();
@@ -55,6 +57,12 @@ export default function ProjectItemPage() {
     });
     setModalVisible(false);
   };
+
+  
+  const handleDrop = (taskId, newStatus) => {
+    dispatch(updateTaskStatus(taskId, newStatus));
+  };
+
 
   if (!project) {
     return (
@@ -98,21 +106,21 @@ export default function ProjectItemPage() {
       </button>
       {tasks.length === 0 ? (
         <div className="boards-wrapper">
-          <Board status="Queue" tasks={[]} />
-          <Board status="Development" tasks={[]} />
-          <Board status="Done" tasks={[]} />
+          <Board onDrop={handleDrop} status="Queue" tasks={[]} />
+          <Board onDrop={handleDrop} status="Development" tasks={[]} />
+          <Board onDrop={handleDrop} status="Done" tasks={[]} />
         </div>
       ) : (
         <div className="boards-wrapper">
-          <Board
+          <Board onDrop={handleDrop}
             status="Queue"
             tasks={tasks.filter((item) => item.status === "Queue")}
           />
-          <Board
+          <Board onDrop={handleDrop}
             status="Development"
             tasks={tasks.filter((item) => item.status === "Development")}
           />
-          <Board
+          <Board onDrop={handleDrop}
             status="Done"
             tasks={tasks.filter((item) => item.status === "Done")}
           />
