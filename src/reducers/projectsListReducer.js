@@ -1,4 +1,4 @@
-import { addProject, addTask, updateTaskStatus } from "../actions/actions";
+import { addProject, addTask, deleteTask, updateTaskStatus } from "../actions/actions";
 
 const initialState = [
   {
@@ -62,7 +62,9 @@ const initialState = [
 export const projectsList = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_PROJECT":
-      return [...state, action.payload];
+      if (state) {
+        return [...state, action.payload];
+      }
 
     case "ADD_TASK":
       const { projectId, newTask } = action.payload;
@@ -76,6 +78,32 @@ export const projectsList = (state = initialState, action) => {
         }
         return project;
       });
+    case 'DELETE_TASK': 
+      const { taskId: deleteTaskId, projectId: deleteProjectId  } = action.payload;
+      const projectIndex = state.find((project) =>
+       project.projectId === Number(deleteProjectId)
+       
+       );
+
+           
+      if (projectIndex === -1) {
+        return state;
+      }
+      const projectToUpdate = state[projectIndex];
+      const updatedTasks = projectIndex.tasks.filter((task) => task.taskId !== deleteTaskId);
+      const updatedProject = {
+        ...projectIndex,
+        tasks: updatedTasks,
+      };
+    
+      const updatedStateDeleteTask = [
+        ...state.slice(0, projectIndex),
+        updatedProject,
+        ...state.slice(projectIndex + 1),
+      ];
+    
+      console.log("Updated state after DELETE_TASK:", updatedStateDeleteTask);
+      return updatedStateDeleteTask;
     case "UPDATE_TASK_STATUS":
       const { taskId, newStatus } = action.payload;
       const updatedProjects = state.map((project) => {
