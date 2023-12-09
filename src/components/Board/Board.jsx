@@ -7,24 +7,22 @@ import TaskItem from "../TaskItem/TaskItem";
 //styles
 import "./Board.scss";
 
-export default function Board({ tasks, status }) {
+export default function Board({ onDrop, tasks, status }) {
   const dispatch = useDispatch();
 
-  const handleDrop = (taskId, newStatus) => {
-    dispatch(updateTaskStatus(taskId, newStatus));
-  };
 
-  const [, ref] = useDrop({
+  const [{ isOver }, drop] = useDrop({
     accept: "TASK",
-    drop: (item) => {
-      const taskId = item.taskId;
+    drop: (task) => {
+      const taskId = task.taskId;
       const newStatus = status;
-      handleDrop(taskId, newStatus);
+      onDrop(taskId, newStatus);
       console.log(
-        `Перетащена задача с ID: ${item.taskId} на доску "${status}"`
+        `Перетащена задача с ID: ${task.taskId} на доску "${status}"`
       );
     },
   });
+  
   return (
     <div
       className={
@@ -34,7 +32,7 @@ export default function Board({ tasks, status }) {
           ? "board-development"
           : "board-done"
       }
-      ref={ref}
+      ref={drop}
     >
       <h2>{status}</h2>
       <div className="board-wrapper">
