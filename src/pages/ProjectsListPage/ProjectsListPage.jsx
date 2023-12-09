@@ -22,11 +22,15 @@ export default function ProjectsListPage() {
   };
 
   const handleSubmitForm = () => {
-    const newProject = {
-      projectId: new Date().valueOf(),
-      title: title,
-      tasks: [],
-    };
+    if (title) {
+      const newProject = {
+        projectId: new Date().valueOf(),
+        title: title,
+        tasks: [],
+      } 
+    } else  {
+      setModalVisible(false);
+    }
     dispatch(addProject(newProject));
     setTitle("");
     setModalVisible(false);
