@@ -55,6 +55,7 @@ export default function ProjectsListPage() {
 
       {modalVisible && (
         <Modal
+          modalClass="modal-window"
           closeModal={closeModal}
           children={
             <form onSubmit={handleSubmitForm}>
