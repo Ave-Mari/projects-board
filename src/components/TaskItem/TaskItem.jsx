@@ -33,9 +33,12 @@ export default function TaskItem({
 
 
   const descriptionCut = (descriptionString) => {
-    const shortString = descriptionString.slice(0, 35);
-    return `${shortString}...`
-
+    if (descriptionString.length > 45) {
+      const shortString = descriptionString.slice(0, 45);
+      return `${shortString}...`
+    } else {
+      return descriptionString
+    }
   }
 
 
