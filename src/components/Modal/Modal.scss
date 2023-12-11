@@ -49,3 +49,19 @@ input::placeholder {
     background: #fbc143;
   }
 }
+
+.modal-project-page {
+  position: absolute;
+  border-radius: 12px;
+  z-index: 1000;
+  top: 20%;
+  left: 34%;
+  right: 35%;
+  background: #fff;
+}
+
+form {
+  input {
+    width: 80%;
+  }
+}
