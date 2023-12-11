@@ -27,8 +27,8 @@ export default function ProjectsListPage() {
         projectId: new Date().valueOf(),
         title: title,
         tasks: [],
-      } 
-    } else  {
+      }
+    } else {
       setModalVisible(false);
     }
     dispatch(addProject(newProject));
@@ -72,19 +72,18 @@ export default function ProjectsListPage() {
           }
         />
       )}
-
-      {projectsList.map((item) => {
-        const { title, projectId } = item;
-        return (
-          <ul>
+      <ol type="1">
+        {projectsList.map((item) => {
+          const { title, projectId } = item;
+          return (
             <li>
               <Link to={`/projects/${projectId}`} key={projectId}>
                 {title}
               </Link>
             </li>
-          </ul>
-        );
-      })}
+          );
+        })}
+      </ol>
     </section>
   );
 }
