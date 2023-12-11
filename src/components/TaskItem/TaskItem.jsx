@@ -31,6 +31,8 @@ export default function TaskItem({
     dispatch(deleteTask(taskId, projectId));
   };
 
+
+
   return (
     <li
       className={
@@ -49,6 +51,7 @@ export default function TaskItem({
       <button className="delete-btn" onClick={deleteItem}>
         <img src={deleteIcon} alt="delete" />
       </button>
+      <button className="btn-show">Show task</button>
     </li>
   );
 }
