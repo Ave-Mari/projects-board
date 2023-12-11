@@ -5,16 +5,25 @@
     padding-top: 20px;
 }
 
-ul {
+ol {
+    list-style-type: decimal;
     li {        
+        margin-bottom: 8px;
+        
         a {
             text-decoration: none;
             font-size: 14px;
-            background: #e31f1f;
             padding: 2px 12px;
-            color: #fff;
+            font-size: 17px;
+            font-weight: 500;
             border-radius: 18px;
+            color: #2602c9;
             cursor: pointer;
+
+            &:hover {
+                background: #e31f1f;            
+                color: #fff;
+            }
         }
         
     }
@@ -27,6 +36,7 @@ ul {
     color: #fff;
     border: none;
     cursor: pointer;
+    margin-bottom: 18px;
 
     &:hover {
         background: #fbc143;
