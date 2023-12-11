@@ -14,7 +14,6 @@ import "./App.scss";
 
 export default function App() {
   const projectsList = useSelector((state) => state.projectsList);
-
   return (
     <main>
       <DndProvider backend={HTML5Backend}>
