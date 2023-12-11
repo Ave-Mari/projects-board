@@ -32,6 +32,12 @@ export default function TaskItem({
   };
 
 
+  const descriptionCut = (descriptionString) => {
+    const shortString = descriptionString.slice(0, 35);
+    return `${shortString}...`
+
+  }
+
 
   return (
     <li
@@ -45,7 +51,7 @@ export default function TaskItem({
       ref={drag}
     >
       <h3>{headline}</h3>
-      <p className="description">{description}</p>
+      <p className="description">{descriptionCut(description)}</p>
       <p className="status">{status}</p>
       <p className="date">{date}</p>
       <button className="delete-btn" onClick={deleteItem}>
