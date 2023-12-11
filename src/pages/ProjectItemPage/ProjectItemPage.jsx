@@ -99,10 +99,12 @@ export default function ProjectItemPage() {
           }
         />
       )}
+      <div className="project-name-wrapper">
       <h1 className="project-title">{project.title}</h1>
       <button onClick={createTaskModal} className="btn-create">
         Create Task
       </button>
+      </div>     
       {tasks.length === 0 ? (
         <div className="boards-wrapper">
           <Board onDrop={handleDrop} status="Queue" tasks={[]} />
