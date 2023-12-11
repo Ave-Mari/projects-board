@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Board from "../../components/Board/Board";
 import Modal from "../../components/Modal/Modal";
-import { addTask,updateTaskStatus } from "../../actions/actions";
+import { addTask, updateTaskStatus } from "../../actions/actions";
 import { useParams, useNavigate } from "react-router-dom";
 import { projectsList } from "../../reducers/projectsListReducer";
 import { useSelector, useDispatch } from "react-redux";
@@ -23,8 +23,6 @@ export default function ProjectItemPage() {
   const project = projectsState.find((p) => p.projectId === Number(projectId));
   const tasks = project.tasks;
 
-  console.log(project);
-
   const createTaskModal = (e) => {
     e.preventDefault();
     setModalVisible(true);
@@ -39,12 +37,12 @@ export default function ProjectItemPage() {
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    setTask({ ...task, [name]: value });
+    setTask({ ...task, taskId: new Date().valueOf(), [name]: value });
   };
 
   const handleSubmit = () => {
     const newTask = {
-      projectId: new Date().valueOf(),
+      taskId: task.taskId,
       headline: task.headline,
       description: task.description,
       status: "Queue",
@@ -58,7 +56,7 @@ export default function ProjectItemPage() {
     setModalVisible(false);
   };
 
-  
+
   const handleDrop = (taskId, newStatus) => {
     dispatch(updateTaskStatus(taskId, newStatus));
   };
@@ -76,6 +74,7 @@ export default function ProjectItemPage() {
     <section className="project-item-page">
       {modalVisible && (
         <Modal
+          modalClass="modal-project-page"
           closeModal={closeModal}
           children={
             <form onSubmit={handleSubmit}>
