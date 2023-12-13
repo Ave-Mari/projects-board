@@ -9,7 +9,7 @@ import { dateFormat } from "./DateFormat";
 //styles
 import "./ProjectItemPage.scss";
 
-export default function ProjectItemPage() {
+export default function ProjectItemPage() {  
   const [modalVisible, setModalVisible] = useState(false);
   const [task, setTask] = useState({
     headline: "",
@@ -31,6 +31,7 @@ export default function ProjectItemPage() {
   const closeModal = (e) => {
     if (e.target === e.currentTarget) {
       setModalVisible(false);
+      setShowMore(false)
     }
   };
 
@@ -60,6 +61,21 @@ export default function ProjectItemPage() {
   const handleDrop = (taskId, newStatus) => {
     dispatch(updateTaskStatus(taskId, newStatus));
   };
+
+  const [showMore, setShowMore] = useState({
+    taskItem: null,
+    show: false
+  });
+
+  const showMoreOfTask = (e, taskId) => {
+    e.preventDefault();
+    const showMoreTask = tasks.find((item) => item.taskId === taskId)
+    setShowMore({
+      taskItem: showMoreTask,
+      show: true
+    });    
+  }
+
 
 
   if (!project) {
@@ -99,6 +115,21 @@ export default function ProjectItemPage() {
           }
         />
       )}
+
+      {showMore && 
+      <Modal 
+          modalClass="modal-show-task"
+          closeModal={closeModal}
+          children={
+            <div>
+            <h3>{showMore.taskItem.headline}</h3>
+            <p>{showMore.taskItem.description}</p>
+            <p>{showMore.taskItem.status}</p>
+            <p>{showMore.taskItem.date}</p>
+            </div>
+          }
+      />
+      }
       <div className="project-name-wrapper">
       <h1 className="project-title">{project.title}</h1>
       <button onClick={createTaskModal} className="btn-create">
@@ -107,23 +138,26 @@ export default function ProjectItemPage() {
       </div>     
       {tasks.length === 0 ? (
         <div className="boards-wrapper">
-          <Board onDrop={handleDrop} status="Queue" tasks={[]} />
-          <Board onDrop={handleDrop} status="Development" tasks={[]} />
-          <Board onDrop={handleDrop} status="Done" tasks={[]} />
+          <Board onDrop={handleDrop} status="Queue" tasks={[]} showMoreOfTask={showMoreOfTask}/>
+          <Board onDrop={handleDrop} status="Development" tasks={[]} showMoreOfTask={showMoreOfTask}/>
+          <Board onDrop={handleDrop} status="Done" tasks={[]} showMoreOfTask={showMoreOfTask}/>
         </div>
       ) : (
         <div className="boards-wrapper">
           <Board onDrop={handleDrop}
             status="Queue"
             tasks={tasks.filter((item) => item.status === "Queue")}
+            showMoreOfTask={showMoreOfTask}
           />
           <Board onDrop={handleDrop}
             status="Development"
             tasks={tasks.filter((item) => item.status === "Development")}
+            showMoreOfTask={showMoreOfTask}
           />
           <Board onDrop={handleDrop}
             status="Done"
             tasks={tasks.filter((item) => item.status === "Done")}
+            showMoreOfTask={showMoreOfTask}
           />
         </div>
       )}
