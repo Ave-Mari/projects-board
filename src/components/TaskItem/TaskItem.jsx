@@ -14,6 +14,7 @@ export default function TaskItem({
   description,
   status,
   date,
+  showMoreOfTask
 }) {
   const dispatch = useDispatch();
   const [{ isDragging }, drag] = useDrag({
@@ -41,6 +42,7 @@ export default function TaskItem({
     }
   }
 
+ 
 
   return (
     <li
@@ -52,6 +54,7 @@ export default function TaskItem({
           : "done"
       }
       ref={drag}
+      key={taskId}
     >
       <h3>{headline}</h3>
       <p className="description">{descriptionCut(description)}</p>
@@ -60,7 +63,7 @@ export default function TaskItem({
       <button className="delete-btn" onClick={deleteItem}>
         <img src={deleteIcon} alt="delete" />
       </button>
-      <button className="btn-show">Show task</button>
+      <button className="btn-show" onClick={e => showMoreOfTask(e, taskId)}>Show task</button>
     </li>
   );
 }
