@@ -7,7 +7,7 @@ import TaskItem from "../TaskItem/TaskItem";
 //styles
 import "./Board.scss";
 
-export default function Board({ onDrop, tasks, status }) {
+export default function Board({ onDrop, tasks, status, showMoreOfTask }) {
   const dispatch = useDispatch();
 
 
@@ -47,6 +47,7 @@ export default function Board({ onDrop, tasks, status }) {
                 description={description}
                 status={status}
                 date={date}
+                showMoreOfTask={showMoreOfTask}
               />
             );
           })}
