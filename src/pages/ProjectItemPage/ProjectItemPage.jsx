@@ -116,7 +116,7 @@ export default function ProjectItemPage() {
         />
       )}
 
-      {showMore && 
+      {showMore.taskItem && 
       <Modal 
           modalClass="modal-show-task"
           closeModal={closeModal}
