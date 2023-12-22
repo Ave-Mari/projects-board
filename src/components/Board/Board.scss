@@ -16,6 +16,10 @@
         margin-bottom: 8px;
     }
 }
+
+.board-wrapper {
+    width: 90%;
+}
 .board-done {
     border: 3px solid rgb(11, 121, 29);
     background: #9dfab5;
@@ -32,7 +36,12 @@
     border-radius: 3%;
 }
 
-ul {
+.board-list {
     list-style: none;
     padding-left: 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 3%;
+    grid-row-gap: 4%;
 }
