@@ -1,15 +1,17 @@
-.queue, .development, .done {
-    width: 370px;
+.queue,
+.development,
+.done {
+    width: 157px;
     border-radius: 12px;
     background: #fff;
-    padding: 5px 8px;
+    padding: 2px 5px;
     display: flex;
     flex-direction: column;
     align-items: start;
-    margin-bottom: 12px;
     position: relative;
 
-    h3, p {
+    h3,
+    p {
         margin: 0 0 5px 0;
     }
 
@@ -25,39 +27,49 @@
         color: #4d3863;
     }
 }
+
 .queue {
     border: 4px dotted #6a23ad;
+
     h3 {
         color: #470287;
         font-size: 16px;
     }
+
     .status {
         background: #902ded;
     }
-    
+
 }
+
 .development {
     border: 4px dotted #da3b0b;
+
     h3 {
         color: #7a0c01;
         font-size: 16px;
     }
+
     .status {
         background: #e47022;
     }
-    
+
 }
+
 .done {
     border: 4px dotted #05a947;
+
     h3 {
         color: #016919;
         font-size: 16px;
     }
+
     .status {
         background: #179e1b;
     }
-    
+
 }
+
 .description {
     width: 340px;
     font-size: 14px;
@@ -83,14 +95,14 @@
     img {
         width: 17px;
     }
-  
+
 }
 
 .btn-show {
     position: absolute;
     right: 3%;
     bottom: 1%;
-    color: #008f77;   
+    color: #008f77;
     border-radius: 10px;
     border: none;
     font-size: 16px;
@@ -101,20 +113,3 @@
         color: #fff;
     }
 }
-
-
-// .board-done, .board-development, .board-queue {
-   
-//   delete:   /* flex-direction: column; */
-//   delete:  /* align-items: center; */
-   
-// }
-
-// ul  {
-//     display: flex;
-//     justify-content: space-around;
-// }
-
-// li {
-//     width: 178px;
-// }
