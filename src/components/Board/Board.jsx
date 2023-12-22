@@ -36,7 +36,7 @@ export default function Board({ onDrop, tasks, status, showMoreOfTask }) {
     >
       <h2>{status}</h2>
       <div className="board-wrapper">
-        <ul>
+        <ul className="board-list">
           {tasks.map((item) => {
             const { taskId, headline, description, status, date } = item;
             return (
