@@ -10,6 +10,7 @@
     align-items: start;
     position: relative;
 
+
     h3,
     p {
         margin: 0 0 5px 0;
@@ -33,7 +34,8 @@
 
     h3 {
         color: #470287;
-        font-size: 16px;
+        font-size: 15px;
+        width: 84%;
     }
 
     .status {
@@ -47,7 +49,8 @@
 
     h3 {
         color: #7a0c01;
-        font-size: 16px;
+        font-size: 15px;
+        width: 84%;
     }
 
     .status {
@@ -61,7 +64,8 @@
 
     h3 {
         color: #016919;
-        font-size: 16px;
+        font-size: 15px;
+        width: 84%;
     }
 
     .status {
@@ -89,9 +93,6 @@
     &:hover {
         background: red;
     }
-
-
-
     img {
         width: 17px;
     }
