@@ -9,7 +9,7 @@ import { dateFormat } from "./DateFormat";
 //styles
 import "./ProjectItemPage.scss";
 
-export default function ProjectItemPage() {  
+export default function ProjectItemPage() {
   const [modalVisible, setModalVisible] = useState(false);
   const [task, setTask] = useState({
     headline: "",
@@ -73,7 +73,7 @@ export default function ProjectItemPage() {
     setShowMore({
       taskItem: showMoreTask,
       show: true
-    });    
+    });
   }
 
 
@@ -116,31 +116,44 @@ export default function ProjectItemPage() {
         />
       )}
 
-      {showMore.taskItem && 
-      <Modal 
+      {showMore.taskItem &&
+        <Modal
           modalClass="modal-show-task"
           closeModal={closeModal}
           children={
-            <div>
-            <h3>{showMore.taskItem.headline}</h3>
-            <p>{showMore.taskItem.description}</p>
-            <p>{showMore.taskItem.status}</p>
-            <p>{showMore.taskItem.date}</p>
+            <div className="task-show-more-wrapper">
+              <h3 className={
+                showMore.taskItem.status === "Queue"
+                  ? "show-more-headline show-more-queue-headline"
+                  : showMore.taskItem.status === "Development"
+                    ? "show-more-headline show-more-development-headline"
+                    : "show-more-headline show-more-done-headline"
+              }>{showMore.taskItem.headline}</h3>
+              <p>{showMore.taskItem.description}</p>
+              <p className={
+                  showMore.taskItem.status === "Queue"
+                    ? "show-more-status show-more-queue-status "
+                    : showMore.taskItem.status === "Development"
+                      ? "show-more-status show-more-development-status "
+                      : "show-more-status show-more-done-status "
+                }
+              >{showMore.taskItem.status}</p>
+              <p>{showMore.taskItem.date}</p>
             </div>
           }
-      />
+        />
       }
       <div className="project-name-wrapper">
-      <h1 className="project-title">{project.title}</h1>
-      <button onClick={createTaskModal} className="btn-create">
-        Create Task
-      </button>
-      </div>     
+        <h1 className="project-title">{project.title}</h1>
+        <button onClick={createTaskModal} className="btn-create">
+          Create Task
+        </button>
+      </div>
       {tasks.length === 0 ? (
         <div className="boards-wrapper">
-          <Board onDrop={handleDrop} status="Queue" tasks={[]} showMoreOfTask={showMoreOfTask}/>
-          <Board onDrop={handleDrop} status="Development" tasks={[]} showMoreOfTask={showMoreOfTask}/>
-          <Board onDrop={handleDrop} status="Done" tasks={[]} showMoreOfTask={showMoreOfTask}/>
+          <Board onDrop={handleDrop} status="Queue" tasks={[]} showMoreOfTask={showMoreOfTask} />
+          <Board onDrop={handleDrop} status="Development" tasks={[]} showMoreOfTask={showMoreOfTask} />
+          <Board onDrop={handleDrop} status="Done" tasks={[]} showMoreOfTask={showMoreOfTask} />
         </div>
       ) : (
         <div className="boards-wrapper">
