@@ -1,8 +1,12 @@
+.board {
+    width: 35%;
+    height: 78vh;
+}
+
 .board-done,
 .board-development,
 .board-queue {
-    width: 450px;
-    height: 480px;
+    
 
     display: flex;
     flex-direction: column;
