@@ -25,12 +25,12 @@ export default function Board({ onDrop, tasks, status, showMoreOfTask }) {
   
   return (
     <div
-      className={
+      className={ 
         status === "Queue"
-          ? "board-queue"
+          ? "board board-queue"
           : status === "Development"
-          ? "board-development"
-          : "board-done"
+          ? "board board-development"
+          : "board board-done"
       }
       ref={drop}
     >
